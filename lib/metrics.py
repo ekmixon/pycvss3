@@ -16,20 +16,44 @@ class Metrics:
     """
 
     # Base Metrics
-    attack_vector = Value(not_defined=float(0.85), network=float(0.85), adjacent_network=float(0.62), local=float(0.55),
-                          physical=float(0.20))
-    attack_complexity = Value(not_defined=float(0.77), low=float(0.77), high=float(0.44))
-    privileges_required = Value(not_defined=float(0.85), none=float(0.85), low=float(0.62), high=float(0.27))
-    privileges_required_changed = Value(not_defined=float(0.85), none=float(0.85), low=float(0.68), high=float(0.50))
-    user_interaction = Value(not_defined=float(0.85), none=float(0.85), required=float(0.62))
-    cia_impact = Value(not_defined=float(0.56), high=float(0.56), low=float(0.22), none=float(0))
+    attack_vector = Value(
+        not_defined=0.85,
+        network=0.85,
+        adjacent_network=0.62,
+        local=0.55,
+        physical=0.2,
+    )
+
+    attack_complexity = Value(not_defined=0.77, low=0.77, high=0.44)
+    privileges_required = Value(not_defined=0.85, none=0.85, low=0.62, high=0.27)
+    privileges_required_changed = Value(
+        not_defined=0.85, none=0.85, low=0.68, high=0.5
+    )
+
+    user_interaction = Value(not_defined=0.85, none=0.85, required=0.62)
+    cia_impact = Value(not_defined=0.56, high=0.56, low=0.22, none=float(0))
 
     # Temporal Metrics
-    exploit_code_maturity = Value(not_defined=float(1.0), high=float(1), functional=float(0.97),
-                                  proof_of_concept=float(0.94), unproven=float(0.91))
-    remediation_level = Value(not_defined=float(1.0), unavailable=float(1), workaround=float(0.97),
-                              temporary_fix=float(0.96), official_fix=float(0.95))
-    report_confidence = Value(not_defined=float(1.0), confirmed=float(1), reasonable=float(0.96), unknown=float(0.92))
+    exploit_code_maturity = Value(
+        not_defined=1.0,
+        high=float(1),
+        functional=0.97,
+        proof_of_concept=0.94,
+        unproven=0.91,
+    )
+
+    remediation_level = Value(
+        not_defined=1.0,
+        unavailable=float(1),
+        workaround=0.97,
+        temporary_fix=0.96,
+        official_fix=0.95,
+    )
+
+    report_confidence = Value(
+        not_defined=1.0, confirmed=float(1), reasonable=0.96, unknown=0.92
+    )
+
 
     # Environmental Metrics
-    cia_requirement = Value(not_defined=float(1.0), high=float(1.5), medium=float(1.0), low=float(0.50))
+    cia_requirement = Value(not_defined=1.0, high=1.5, medium=1.0, low=0.5)
